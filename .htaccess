@@ -12,13 +12,12 @@ BrowserMatch \bMSI[E] !no-gzip !gzip-only-text/html
 # CACHE NAVIGATEUR
 # BEGIN Cache-Control Headers
 <IfModule mod_headers.c>
- <FilesMatch "\.(ico|jpe?g|png|gif|swf|css|gz)$">
+ <FilesMatch "\.(ico|jpeg|png|gif|swf|css|gz)$">
  Header set Cache-Control "max-age=2592000, public"
- </FilesMatch>
  <FilesMatch "\.(js)$">
  Header set Cache-Control "max-age=2592000, private"
  </FilesMatch>
-<filesMatch "\.(html|htm)$">
+<filesMatch "\.(html|css)$">
 Header set Cache-Control "max-age=7200, public"
 </filesMatch>
 # Enleve le cache pour les ressources dynamiques
@@ -36,6 +35,7 @@ ExpiresByType image/jpeg "access plus 1 month"
 ExpiresByType image/gif "access plus 1 month"
 ExpiresByType image/png "access plus 1 month"
 ExpiresByType text/css "access plus 1 month"
+ExpiresByType text/html "access plus 1 month"
 ExpiresByType application/pdf "access plus 1 month"
 ExpiresByType text/x-javascript "access plus 1 month"
 ExpiresByType application/x-shockwave-flash "access plus 1 year"
